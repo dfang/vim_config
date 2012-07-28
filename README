@@ -1,6 +1,7 @@
 安装办法，运行install，请做好备份
 
-
+1. 安装 vundle
+2. copy .vimrc 到home directory
 
 links:
 
