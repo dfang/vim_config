@@ -5,9 +5,9 @@ if [ ! -d ~/.vim/bundle/vundle ]; then
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
 echo 'backup your .vimrc'
-cp ~/.vimrc ~/vimrcbak
-cp ~/.vundle.vim ~/.vundel.vimbak
+#cp ~/.vimrc ~/vimrcbak
+#cp ~/.vundle.vim ~/.vundel.vimbak
 echo 'copy .vimrc to your home directory'
-cp .vimrc ~/
-cp .vundle.vim ~/
+cp -f .vimrc ~/
+cp -f .vundle.vim ~/
 echo 'done!'

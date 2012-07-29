@@ -15,34 +15,38 @@ Bundle 'gmarik/vundle'
 filetype plugin indent on     " required!
 
 " My plugins
-Bundle 'tpope/vim-rails'
-Bundle 'ack.vim'
-Bundle 'honza/snipmate-snippets'
-"Bundle 'msanders/snipmate.vim'
-Bundle 'crooloose/nerdtree'
-"Bundle 'git://github.com/scrooloose/nerdtree.git'
-"Bundle 'bufexplorer.zip'
-Bundle 'ctrlp.vim'
 Bundle 'genutils'
 Bundle 'lookupfile'
-Bundle 'surround.vim'
-Bundle 'taglist.vim'
-Bundle 'SuperTab'
-Bundle 'The-NERD-Commenter'
-Bundle 'vim-ruby/vim-ruby'
+
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+
+Bundle 'tpope/vim-rails'
+Bundle 'ack.vim'
+"Bundle 'honza/snipmate-snippets'
+"Bundle 'msanders/snipmate.vim'
+"Bundle 'git://github.com/scrooloose/nerdtree.git'
+"Bundle 'bufexplorer.zip'
+"Bundle 'ctrlp.vim'
+"Bundle 'surround.vim'
+"Bundle 'taglist.vim'
+"Bundle 'SuperTab'
+"Bundle 'vim-ruby/vim-ruby'
 "Bundle 'tpope/vim-haml'
 "Bundle 'vim-markdown'
 "Bunlde 'tpope/vim-surround'
 "Bundle 'tpope/vim-rake'
-
-
-Bundle 'tpope/vim-vividchalk'
-Bundle 'blackboard.vim'
+"Bundle 'tpope/vim-vividchalk'
+"Bundle 'blackboard.vim'
 
 "------plugin settings-----------------------------------------------------------------------
 
-"autocmd VimEnter * NERDTree "启动Vim时自动打开nerdtree
-nmap <F4> :NERDTreeToggle <CR>
+"NERDTree setting
+autocmd VimEnter * NERDTree "启动Vim时自动打开nerdtree
+map <F4> :NERDTreeToggle<CR>
+"set mouse=a
+"let NERDTreeMode=3
+
 
 " lookupfile settings
 " lookupfile 默认使用F5来toggle

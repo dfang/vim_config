@@ -9,10 +9,10 @@ links:
 参考了一些vimrc
 打造自己的版本
 
+sample .vimrc
+
+http://phuzz.org/vimrc.html 
 https://github.com/chloerei/vimrc/blob/master/.vimrc
 http://chloerei.com/2012/02/02/vundle-is-vim-bundle/
 https://github.com/HungYuHei/vimfiles
-
-
-
 https://github.com/gmarik/vimfiles/blob/1f4f26d42f54443f1158e0009746a56b9a28b053/vimrc
