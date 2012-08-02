@@ -1,79 +1,88 @@
- " load Vundle and bundles config
- if filereadable(expand("~/.vimrc.bundles.local"))
-            source ~/.vimrc.bundles.local
- endif
+set nocompatible               " be iMproved
+filetype off                   " required!
 
- " Set mapleader
- let mapleader = ","
+"" enable vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
- " Fast reloading of the .vimrc
- map <silent> <leader>ss :source ~/.vimrc<cr>
+"" let Vundle manage Vundle , required! 
+Bundle 'gmarik/vundle'
 
- " Fast editing of .vimrc
- map <silent> <leader>ee :tabedit ~/.vimrc<cr>
+"" enable file type detection, required!
+filetype plugin indent on
 
- " When .vimrc is edited, reload it
- autocmd! bufwritepost .vimrc source ~/.vimrc
- 
- " lookup file tag file
- " 确保LookupFile_TagExpr变量设置正确，否则还是默认使用ctags的tag来查找，速度慢
- let g:LookupFile_TagExpr = '"filenametags"' 
-  
- " enable file type detection
- filetype plugin indent on
- 
- color desert
- 
- " normal settings
- set autoindent
- set number
- set showmatch
- syntax on
- set nowrap
- set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+"" if exists vimrc.bundles.local file , load it 
+"" plugins and plugin settings in that file
+if filereadable(expand("~/.vimrc.bundles.local"))
+  source ~/.vimrc.bundles.local
+endif
 
- " set increment search and hightlight search
- set incsearch
- set hlsearch
- 
- " do not create backup, swap file, use git for version managment
- set nobackup
- set noswapfile
- 
- " status line setting
- set laststatus=2
- set statusline=%<%f\ %h%m%r%=[TYPE=%Y]\ [FORMAT=%{&ff}]\ [ENC=%{&enc}]\ [FENC=%{&fenc}]\ %-14.(%l,%c%V%)\ %P
+"" Set mapleader
+let mapleader = ","
 
- " highline current line & column
- " DOES NOT WORK with colorscheme solarized and blackboard
- "--------------------------------------------------------
- set cursorline
- set cursorcolumn
- highlight cursorline term=underline cterm=NONE ctermbg=0 gui=NONE guibg=Grey40
+"" Fast reloading of the .vimrc
+map <silent> <leader>ss :source ~/.vimrc<cr>
 
+"" Fast editing of .vimrc
+map <silent> <leader>ee :tabedit ~/.vimrc<cr>
 
- " Windows switch with Ctrl+↑↓←→
- noremap <silent> <C-left> <esc><C-W><left>
- noremap <silent> <C-right> <esc><C-W><right>
- noremap <silent> <C-up> <esc><C-W><up>
- noremap <silent> <C-down> <esc><C-W><down>
+"" When .vimrc is edited, reload it
+autocmd! bufwritepost .vimrc source ~/.vimrc
 
- " Tab navigation
- noremap <silent> tf :tabfirst<cr>
- noremap <silent> tl :tablast<cr>
- noremap <silent> tp :tabprevious<cr>
- noremap <silent> tn :tabnext<cr>
- noremap te :tabedit<space>
- noremap tm :tabmove<space>
+color desert
+
+" normal settings
+set autoindent
+set number
+set showmatch
+syntax on
+set nowrap
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
+" set increment search and hightlight search
+set incsearch
+set hlsearch
+
+" do not create backup, swap file, use git for version managment
+set nobackup
+set noswapfile
+
+" status line setting
+set laststatus=2
+set statusline=%<%f\ %h%m%r%=[TYPE=%Y]\ [FORMAT=%{&ff}]\ [ENC=%{&enc}]\ [FENC=%{&fenc}]\ %-14.(%l,%c%V%)\ %P
+
+" highline current line & column
+" DOES NOT WORK with colorscheme solarized and blackboard
+"--------------------------------------------------------
+set cursorline
+set cursorcolumn
+highlight cursorline term=underline cterm=NONE ctermbg=0 gui=NONE guibg=Grey40
 
 
- " This means that you can have unwritten changes to a file and open a new file
- " using :e, without being forced to write or undo your changes first.
- set hidden
- 
- " show command menu, work great with snipmate-snippets
- set wildmenu
+" Windows switch with Ctrl+↑↓←→
+noremap <silent> <C-left> <esc><C-W><left>
+noremap <silent> <C-right> <esc><C-W><right>
+noremap <silent> <C-up> <esc><C-W><up>
+noremap <silent> <C-down> <esc><C-W><down>
+
+" Tab navigation
+noremap <silent> tf :tabfirst<cr>
+noremap <silent> tl :tablast<cr>
+noremap <silent> tp :tabprevious<cr>
+noremap <silent> tn :tabnext<cr>
+noremap te :tabedit<space>
+noremap tm :tabmove<space>
+
+
+" This means that you can have unwritten changes to a file and open a new file
+" using :e, without being forced to write or undo your changes first.
+set hidden
+
+" show command menu, work great with snipmate-snippets
+set wildmenu
+set wildmode=list:longest,full  " command <Tab> completion, list matches, then longest common part, then all.
 
 if filereadable(expand("~/.vimrc.local"))
-        source ~/.vimrc.local
+  source ~/.vimrc.local
+
 endif
