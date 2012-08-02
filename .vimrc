@@ -1,5 +1,7 @@
  " load Vundle and bundles config
- source ~/.vundle.vim
+ if filereadable(expand("~/.vimrc.bundles.local"))
+            source ~/.vimrc.bundles.local
+ endif
 
  " Set mapleader
  let mapleader = ","
@@ -71,3 +73,7 @@
  
  " show command menu, work great with snipmate-snippets
  set wildmenu
+
+if filereadable(expand("~/.vimrc.local"))
+        source ~/.vimrc.local
+endif

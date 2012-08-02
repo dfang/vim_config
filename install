@@ -1,13 +1,27 @@
 #!/bin/bash
+
+endpath="$HOME/.vimconfig"
+
+# Backing up current .vimrc .vimrc.local .vimrc.bundles.local
+echo 'backing up current vim config to .vimbak home'
+today=`date +%Y%m%d`
+for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc $HOME/.vimrc.local $HOME/.vimrc.bundles.local; do [ -e $i ] && mv $i $i.$today; done
+
 # install vundle
+echo 'install vundle'
 if [ ! -d ~/.vim/bundle/vundle ]; then
   echo 'cloning vundle'
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
-echo 'backup your .vimrc'
-#cp ~/.vimrc ~/vimrcbak
-#cp ~/.vundle.vim ~/.vundel.vimbak
-echo 'copy .vimrc to your home directory'
-cp -f .vimrc ~/
-cp -f .vundle.vim ~/
-echo 'done!'
+
+#
+mkdir -p $endpath/.vim/bundle
+ln -sf $endpath/.vimrc $HOME/.vimrc
+ln -sf $endpath/.vim $HOME/.vim
+ln -sf $endpath/.vimrc.local $HOME/.vimrc.local
+ln -sf $endpath/.vimrc.bundles.local $HOME/.vimrc.bundles.local
+
+
+# install plugins
+echo "installing plugins using Vundle"
+vim +BundleInstall! +BundleClean +q
