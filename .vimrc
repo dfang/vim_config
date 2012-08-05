@@ -39,9 +39,11 @@ syntax on
 set nowrap
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
-" set increment search and hightlight search
+" set increment search and hightlight search and search ignorecase
 set incsearch
 set hlsearch
+"search ignorecase
+set ignorecase
 
 " do not create backup, swap file, use git for version managment
 set nobackup
@@ -60,10 +62,10 @@ highlight cursorline term=underline cterm=NONE ctermbg=0 gui=NONE guibg=Grey40
 
 
 " Windows switch with Ctrl+↑↓←→
-noremap <silent> <C-left> <esc><C-W><left>
-noremap <silent> <C-right> <esc><C-W><right>
-noremap <silent> <C-up> <esc><C-W><up>
-noremap <silent> <C-down> <esc><C-W><down>
+noremap <silent> <C-h> <esc><C-W><left>
+noremap <silent> <C-l> <esc><C-W><right>
+noremap <silent> <C-k> <esc><C-W><up>
+noremap <silent> <C-j> <esc><C-W><down>
 
 " Tab navigation
 noremap <silent> tf :tabfirst<cr>
@@ -84,5 +86,4 @@ set wildmode=list:longest,full  " command <Tab> completion, list matches, then l
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
-
 endif

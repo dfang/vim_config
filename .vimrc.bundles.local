@@ -1,4 +1,20 @@
 Bundle 'AutoClose'
+Bundle 'scrooloose/nerdtree'
+
+"------------------------------------------
+"snipmates and its dependencies
+"------------------------------------------
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+"Bundle 'scrooloose/snipmate-snippets'
+"forked from honza/snipmate-snippets
+Bundle 'dfang/snipmate-snippets' 
+Bundle 'garbas/vim-snipmate'
 
 
 
+map <F4> :NERDTreeToggle<CR>
+set mouse=a
+let NERDTreeMouseMode=3
+let NERDTreeMiniUI=1
+let NERDTreeQuitOnOpen=0
