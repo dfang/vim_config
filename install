@@ -8,7 +8,6 @@ today=`date +%Y%m%d`
 for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc $HOME/.vimrc.local $HOME/.vimrc.bundles.local; do [ -e $i ] && mv $i $i.$today; done
 
 # install vundle
-echo 'install vundle'
 if [ ! -d ~/.vim/bundle/vundle ]; then
   echo 'cloning vundle'
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle

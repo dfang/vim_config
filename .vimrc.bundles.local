@@ -12,9 +12,34 @@ Bundle 'dfang/snipmate-snippets'
 Bundle 'garbas/vim-snipmate'
 
 
+Bundle 'L9'
+Bundle 'FuzzyFinder'
 
-map <F4> :NERDTreeToggle<CR>
+
+"------------------------------------------
+"NERDTree
+"------------------------------------------
+map <F4> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 set mouse=a
 let NERDTreeMouseMode=3
-let NERDTreeMiniUI=1
+let NERDTreeMinimalUI=1
 let NERDTreeQuitOnOpen=0
+
+
+"------------------------------------------
+"FuzzyFinder
+"------------------------------------------
+map ,, :FufCoverageFile!<cr>
+""nnoremap <unique> <silent> <leader>fb :FufBuffer!<CR>
+""nnoremap <unique> <silent> <leader>ff :FufFile!<CR>
+""nnoremap <unique> <silent> <leader>fm :FufMruFile!<CR>
+""nnoremap <unique> <silent> <leader>fc :FufRenewCache<CR>
+autocmd FileType fuf nmap <C-c> <ESC>
+let g:fuf_patternSeparator = ' '
+let g:fuf_modesDisable = ['mrucmd']
+let g:fuf_mrufile_exclude = '\v\.DS_Store|\.git|\.swp|\.svn'
+let g:fuf_mrufile_maxItem = 100
+let g:fuf_enumeratingLimit = 2000
+let g:fuf_file_exclude = '\v\.DS_Store|\.git*|\.swp|\.svn'
+let g:fuf_coveragefile_exclude='\v\~$|\.(o|exe|dll|bak|orig|swp)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|\.git*'
+let g:fuf_coveragefile_prompt='=>'
