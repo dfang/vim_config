@@ -15,7 +15,10 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 
-
+Bundle 'tpope/vim-rails'
+"Bundle 'chilicuil/conque'
+Bundle 'huobazi/conque'
+Bundle 'ZenCoding.vim'
 "------------------------------------------
 "NERDTree
 "------------------------------------------
