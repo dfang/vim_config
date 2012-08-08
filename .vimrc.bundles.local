@@ -17,8 +17,11 @@ Bundle 'FuzzyFinder'
 
 Bundle 'tpope/vim-rails'
 "Bundle 'chilicuil/conque'
-Bundle 'huobazi/conque'
+"Bundle 'huobazi/conque'
 Bundle 'ZenCoding.vim'
+
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'ervandew/supertab'
 "------------------------------------------
 "NERDTree
 "------------------------------------------
