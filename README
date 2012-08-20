@@ -1,6 +1,6 @@
 How to Install
 
-git clone https://github.com/dfang/vim_config ~/.vimconfig && ~/.vimconfig/install
+git clone https://github.com/dfang/vim_config.git ~/.vimconfig && ~/.vimconfig/install
 
 
 sample .vimrc
