@@ -20,7 +20,8 @@ endif
 " Set mapleader
 let mapleader = ","
 
-color desert
+set background=dark
+color darkblue
 
 " normal settings
 set autoindent
@@ -83,3 +84,12 @@ set wildmode=list:longest,full  " command <Tab> completion, list matches, then l
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+"map <Esc>[B <Down>
+
+set vb t_vb=
+
+Bundle 'tir_black'
+
+set t_Co=256
+color tir_black

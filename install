@@ -5,7 +5,7 @@ endpath="$HOME/.vimconfig"
 # Backing up current .vimrc .vimrc.local .vimrc.bundles.local
 echo 'backing up current vim config to .vimbak home'
 today=`date +%Y%m%d`
-for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc $HOME/.vimrc.local $HOME/.vimrc.bundles.local; do [ -e $i ] && mv $i $i.$today; done
+#for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc $HOME/.vimrc.local $HOME/.vimrc.bundles.local; do [ -e $i ] && mv $i $i.$today; done
 
 # install vundle
 if [ ! -d ~/.vim/bundle/vundle ]; then
@@ -14,7 +14,7 @@ if [ ! -d ~/.vim/bundle/vundle ]; then
 fi
 
 #
-mkdir -p $endpath/.vim/bundle
+#mkdir -p $endpath/.vim/bundle
 ln -sf $endpath/.vimrc $HOME/.vimrc
 ln -sf $endpath/.vim $HOME/.vim
 ln -sf $endpath/.vimrc.local $HOME/.vimrc.local
