@@ -21,7 +21,7 @@ endif
 let mapleader = ","
 
 set background=dark
-color darkblue
+"color darkblue
 
 " normal settings
 set autoindent
